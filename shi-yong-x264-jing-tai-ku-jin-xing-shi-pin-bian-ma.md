@@ -71,39 +71,24 @@ sourceSets {
 
 添加cmakelist 配置
 
+```
 添加头文件目录，可多个
-
-include\_directories\(src/main/cpp/include/libx264\)
-
-添加静态库
-
-add\_library\(libx264
-
+include_directories(src/main/cpp/include/libx264)
+添加静态库 
+add_library(libx264
             STATIC
-
-            IMPORTED\)
-
+            IMPORTED)
 连接动态库和头文件
-
-set\_target\_properties\(libx264
-
-                      PROPERTIES IMPORTED\_LOCATION
-
-                      ${CMAKE\_SOURCE\_DIR}/libs/${ANDROID\_ABI}/libx264.a\)
-
-关联库
-
-target\_link\_libraries\( \# Specifies the target library.
-
-                      \#可以多个，依次添加
-
-                      libx264
-
-                      \# Links the log library to the target library.
-
-                      ${log-lib}\)
-
-
+set_target_properties(libx264
+                      PROPERTIES IMPORTED_LOCATION
+                      ${CMAKE_SOURCE_DIR}/libs/${ANDROID_ABI}/libx264.a)
+#关联库
+target_link_libraries( # Specifies the target library.
+#可以多个，依次添加
+libx264
+# Links the log library to the target library.
+${log-lib})
+```
 
 
 
