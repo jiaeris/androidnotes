@@ -72,13 +72,13 @@ sourceSets {
 添加cmakelist 配置
 
 ```
-添加头文件目录，可多个
+#添加头文件目录，可多个
 include_directories(src/main/cpp/include/libx264)
-添加静态库 
+#添加静态库 
 add_library(libx264
             STATIC
             IMPORTED)
-连接动态库和头文件
+#连接动态库和头文件
 set_target_properties(libx264
                       PROPERTIES IMPORTED_LOCATION
                       ${CMAKE_SOURCE_DIR}/libs/${ANDROID_ABI}/libx264.a)
@@ -90,5 +90,5 @@ libx264
 ${log-lib})
 ```
 
-
+详细可见orz项目下
 
