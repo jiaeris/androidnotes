@@ -1,4 +1,6 @@
-# **android开发记录**
+# A**ndroid开发笔记**
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+该笔记主要用于记录一些在开发过程中遇到的问题，以及一些容易忘记的知识点。（俗话说，好记性不如烂笔头Orz）
+
+如果
 
