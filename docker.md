@@ -2,7 +2,7 @@
 
 ### 第一部分：镜像
 
-本地镜像
+本地镜像列表
 
 ```
 docker images
@@ -51,7 +51,9 @@ docker inspect <image-id>|<repository>
 
 删除镜像
 
-    `docker rmi <image-id>|<repository>`
+```
+docker rmi <image-id>|<repository>
+```
 
 ### 第二部分：容器
 
