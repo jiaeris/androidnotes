@@ -61,34 +61,6 @@ docker inspect <image-id>|<repository>
 docker rmi <image-id>|<repository>
 ```
 
-### 第二部分：容器
-
-运行中容器
-
-```
-docker ps
-```
-
-所有容器
-
-```
-docker ps -a
-```
-
-删除容器
-
-```
-docker rm <container-id>|<container-name>
-
-注：参数为容器的ID或者容器的Name
-```
-
-启动/关闭/重启容器
-
-```
-docker start/stop/restart <container-id>|<container-name>
-```
-
 基于已有容器创建新镜像
 
 ```
@@ -122,6 +94,42 @@ docker save -o <new-image-name>.tar <repository:tag>
 ```
 docker load --input <image-name>.tar
 ```
+
+上传镜像
+
+    `docker push <repository:tag>`
+
+### 第二部分：容器
+
+运行中容器
+
+```
+docker ps
+```
+
+所有容器
+
+```
+docker ps -a
+```
+
+删除容器
+
+```
+docker rm <container-id>|<container-name>
+
+注：参数为容器的ID或者容器的Name
+```
+
+启动/关闭/重启容器
+
+```
+docker start/stop/restart <container-id>|<container-name>
+```
+
+
+
+
 
 
 
