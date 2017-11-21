@@ -101,31 +101,5 @@ docker start/stop/restart <container-id>|<container-name>
 
     `-p,--pause=true 提交时暂停容器运行`
 
-   `simple: docker commit -a "YUNGA" -m "added a new file" a925cb40b3f0 test:latest`
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    `simple: docker commit -a "YUNGA" -m "added a new file" a925cb40b3f0 test:latest`
 
