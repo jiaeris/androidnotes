@@ -6,6 +6,8 @@ docker中国[ https://www.docker-cn.com](https://www.docker-cn.com)
 
 参考资料 docker技术入门与实战
 
+&lt;&gt;内表参数 \|表或者
+
 ### 第一部分：镜像
 
 本地镜像列表
@@ -17,13 +19,13 @@ docker images
 搜索镜像
 
 ```
-docker search <image_name>
+docker search <image-name>
 ```
 
 获取镜像
 
 ```
-docker pull <image_name>
+docker pull <image-name>
 
 注：默认获取的为最新版本
 ```
