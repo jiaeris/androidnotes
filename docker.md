@@ -96,7 +96,7 @@ docker save -o <new-image-name>.tar <repository:tag>
 载入镜像
 
 ```
-docker load --input <image-name>.tar
+cat <file>.tar.gz | docker load --input <image-name>.tar
 ```
 
 上传镜像
@@ -179,5 +179,9 @@ simple ： docker export ce5 >test-for-run.tar
 
 导入容器
 
-    `cat <file>.tar | docker import - <repository:tag>`
+```
+cat <file>.tar | docker import - <repository:tag>
+```
+
+
 
