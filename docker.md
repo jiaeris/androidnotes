@@ -169,9 +169,15 @@ docker exec -ti <container-id>|<container-name> /bin/bash
 
 导出容器
 
-    `docker export <container-id>|<container-name>`
+```
+docker export <container-id>|<container-name>
 
-    `simple ： docker export ce5 >test-for-run.tar`
+simple ： docker export ce5 >test-for-run.tar
 
+注：导出容器不区分容器的运行状态
+```
 
+导入容器
+
+    `cat <file>.tar | docker import - <repository:tag>`
 
