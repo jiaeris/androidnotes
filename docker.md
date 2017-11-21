@@ -130,7 +130,7 @@ docker run -p <system-port>:<container-port> --name <container-name> -it -v <sys
 docker run -p 10011:10086 --name webc -it -v /yunga:/yunga ubuntu /bin/bash
 
 注：
--p 指定映射端口，系统端口:容器内端口
+-p 指定映射端口，系统端口:容器内端口（-P 若将-p改写为大写-P则自动根据容器端口映射主机端口）
 --name 指定创建容器的名字NAME
 -it 同新建容器
 -v 挂载数据卷（挂载普通数据卷，直接跟上数据卷路径。挂载主机目录作为数据据卷，主机目录:容器目录），若路径不存在会自动创建
