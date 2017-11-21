@@ -11,7 +11,7 @@ docker images
 搜索镜像
 
 ```
-docker search  <image_name>
+docker search <image_name>
 ```
 
 获取镜像
@@ -48,6 +48,10 @@ docker tag <old-repository>/<old-tag> <new-repository>/<new-tag>
 ```
 docker inspect <image-id>|<repository>
 ```
+
+删除镜像
+
+    `docker rmi <image-id>|<repository>`
 
 ### 第二部分：容器
 
