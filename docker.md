@@ -1,8 +1,10 @@
 ## docker常用命令
 
-[https://www.docker.com/](https://www.docker.com/ "Docker官网")
+docker官网 [https://www.docker.com/](https://www.docker.com/ "Docker官网")
 
+docker中国[ https://www.docker-cn.com](https://www.docker-cn.com)
 
+参考资料 docker技术入门与实战
 
 ### 第一部分：镜像
 
@@ -86,34 +88,6 @@ docker rm <container-id>|<container-name>
 ```
 docker start/stop/restart <container-id>|<container-name>
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
