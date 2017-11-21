@@ -89,5 +89,43 @@ docker rm <container-id>|<container-name>
 docker start/stop/restart <container-id>|<container-name>
 ```
 
+基于已有容器创建新镜像
+
+    `docker commit <options> <container-id> <repository:tag>`
+
+    `可选参数：`
+
+    `-a,--author=" "作者信息`
+
+    `-m,--message=" "提交消息`
+
+    `-p,--pause=true 提交时暂停容器运行`
+
+   `simple: docker commit -a "YUNGA" -m "added a new file" a925cb40b3f0 test:latest`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
