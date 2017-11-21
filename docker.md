@@ -113,7 +113,9 @@ docker create -it <image-id>|<repository:tag>
 
 启动容器
 
-    `docker start <container-id>|<container-name>`
+```
+docker start <container-id>|<container-name>
+```
 
 运行中容器
 
