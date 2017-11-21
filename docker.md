@@ -1,6 +1,6 @@
 ## docker常用命令
 
-docker官网 [https://www.docker.com/](https://www.docker.com/ "Docker官网")
+docker官网 [https://www.docker.com](https://www.docker.com/ "Docker官网")
 
 docker中国[ https://www.docker-cn.com](https://www.docker-cn.com)
 
