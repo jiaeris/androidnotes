@@ -81,6 +81,8 @@ simple: docker commit -a "YUNGA" -m "added a new file" a925cb40b3f0 test:latest
 
 ```
 docker import - ubuntu:14.04
+
+模板可在OPENVZ下载
 ```
 
 存出镜像
@@ -102,6 +104,10 @@ docker push <repository:tag>
 ```
 
 ### 第二部分：容器
+
+新建容器
+
+`docker create <image-id>|<repository:tag>`
 
 运行中容器
 
