@@ -45,11 +45,9 @@ docker tag <old-repository>/<old-tag> <new-repository>/<new-tag>
 
 获取镜像详细信息
 
-    `docker inspect <image-id>|<repository>`
-
-
-
-
+```
+docker inspect <image-id>|<repository>
+```
 
 ### 第二部分：容器
 
