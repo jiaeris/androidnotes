@@ -123,7 +123,19 @@ docker start/stop/restart <container-id>|<container-name>
 
 创建并启动容器
 
-    `docker run -p <system-port>:<container-port> --name <container-name> -it -v <system-path>:<container-path> <command>`
+```
+docker run -p <system-port>:<container-port> --name <container-name> -it -v <system-path>:<container-path> <command>
+
+以下是一个使用例子：
+docker run -p 10011:10086 --name webc -it -v /yunga:/yunga ubuntu /bin/bash
+
+注：
+-p 指定映射端口，系统端口:容器内端口
+--name 指定创建容器的名字NAME
+-it 同新建容器
+-v 挂载数据卷（挂载普通数据卷，直接跟上数据卷路径。挂载主机目录作为数据据卷，主机目录:容器目录），若路径不存在会自动创建
+command 启动容器时第一时间执行的命令
+```
 
 运行中容器
 
