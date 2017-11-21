@@ -113,5 +113,9 @@ docker import - ubuntu:14.04
 
 存出镜像
 
-    `docker save -o <new-image-name>.tar <repository:tag> `
+```
+docker save -o <new-image-name>.tar <repository:tag>
+```
+
+
 
