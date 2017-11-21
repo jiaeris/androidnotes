@@ -115,11 +115,15 @@ docker create -itd <image-id>|<repository:tag>
 -d 使得容器在后台以守护态（daemonized）形式运行
 ```
 
-启动容器
+启动/关闭/重启容器
 
 ```
-docker start <container-id>|<container-name>
+docker start/stop/restart <container-id>|<container-name>
 ```
+
+创建并启动容器
+
+    `docker run -p <system-port>:<container-port> --name <container-name> -it -v <system-path>:<container-path> <command>`
 
 运行中容器
 
@@ -141,13 +145,13 @@ docker rm <container-id>|<container-name>
 注：参数为容器的ID或者容器的Name
 ```
 
-启动/关闭/重启容器
-
-```
-docker start/stop/restart <container-id>|<container-name>
-```
-
 进入容器
 
-    `docker attach <container-id>|<container-name>`
+```
+docker attach <container-id>|<container-name>
+
+docker exec -ti <container-id>|<container-name> /bin/bash
+```
+
+
 
