@@ -6,7 +6,7 @@ docker中国[ https://www.docker-cn.com](https://www.docker-cn.com)
 
 参考资料 docker技术入门与实战
 
-&lt;&gt;内表参数 \|表或者
+说明：&lt;&gt;内表参数
 
 ### 第一部分：镜像
 
