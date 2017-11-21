@@ -117,5 +117,7 @@ docker import - ubuntu:14.04
 docker save -o <new-image-name>.tar <repository:tag>
 ```
 
+载入镜像
 
+    `docker load --input <image-name>.tar`
 
