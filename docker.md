@@ -107,5 +107,5 @@ simple: docker commit -a "YUNGA" -m "added a new file" a925cb40b3f0 test:latest
 
 基于模板导入镜像
 
-  `docker import - ubuntu:14.04`
+    `docker import - ubuntu:14.04`
 
