@@ -107,7 +107,13 @@ docker push <repository:tag>
 
 新建容器
 
-    `docker create <image-id>|<repository:tag>`
+```
+docker create -it <image-id>|<repository:tag>
+```
+
+启动容器
+
+    `docker start <container-id>|<container-name>`
 
 运行中容器
 
