@@ -36,7 +36,7 @@ docker pull <host>:<port>/<image-name>
 
 给镜像添加标签
 
-`docker tag <old-repository>/<old-tag> <new-repository>/<new-tag>`
+    `docker tag <old-repository>/<old-tag> <new-repository>/<new-tag>`
 
 ### 第二部分：容器
 
