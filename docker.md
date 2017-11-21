@@ -167,5 +167,11 @@ docker attach <container-id>|<container-name>
 docker exec -ti <container-id>|<container-name> /bin/bash
 ```
 
+导出容器
+
+    `docker export <container-id>|<container-name>`
+
+    `simple ： docker export ce5 >test-for-run.tar`
+
 
 
