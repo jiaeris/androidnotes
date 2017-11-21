@@ -157,6 +157,10 @@ docker ps -a
 docker rm <container-id>|<container-name>
 
 注：参数为容器的ID或者容器的Name
+
+-f,--force=false 强制删除一个容器
+-l,--link=false 删除容器连接，保留容器
+-v,--volumes=false 删除容器挂载的数据卷
 ```
 
 进入容器
@@ -182,6 +186,10 @@ simple ： docker export ce5 >test-for-run.tar
 ```
 cat <file>.tar | docker import - <repository:tag>
 ```
+
+第三部分：仓库
+
+第四部分：数据管理
 
 
 
