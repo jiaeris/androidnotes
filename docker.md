@@ -108,7 +108,11 @@ docker push <repository:tag>
 新建容器
 
 ```
-docker create -it <image-id>|<repository:tag>
+docker create -itd <image-id>|<repository:tag>
+
+-t 让docker分配一个伪终端（pseudo-tty)并绑定到容器标准输入上
+-i 让容器打开标准输入
+-d 使得容器在后台以守护态（daemonized）形式运行
 ```
 
 启动容器
@@ -143,5 +147,7 @@ docker rm <container-id>|<container-name>
 docker start/stop/restart <container-id>|<container-name>
 ```
 
+进入容器
 
+    `docker attach <container-id>|<container-name>`
 
