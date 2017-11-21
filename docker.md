@@ -97,7 +97,9 @@ docker load --input <image-name>.tar
 
 上传镜像
 
-    `docker push <repository:tag>`
+```
+docker push <repository:tag>
+```
 
 ### 第二部分：容器
 
@@ -126,10 +128,6 @@ docker rm <container-id>|<container-name>
 ```
 docker start/stop/restart <container-id>|<container-name>
 ```
-
-
-
-
 
 
 
