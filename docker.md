@@ -200,5 +200,9 @@ cat <file>.tar | docker import - <repository:tag>
 
 在容器内创建一个数据卷
 
-    docker run -v /&lt;data-volumes-name&gt; &lt;respository:tag&gt; &lt;command&gt;
+```
+docker run -v /<data-volumes-name> <respository:tag> <command>
+```
+
+
 
