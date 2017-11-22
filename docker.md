@@ -247,7 +247,7 @@ simples:
 docker run --volumes-from dbdata -v <system-path>:/backup <respository:tag> tar cvf /backup/backup.tar /dbdata
 
 注：使用 --volumes-from 标记来创建一个加载 dbdata 容器卷的容器，并从本地主机挂载当前到容器的
-/backup目录。容器启动后，使用了 tar 命令来将 dbdata 卷备份为本地的 /backup/backup.tar.
+/backup目录。容器启动后，使用了tar命令来将dbdata卷备份为本地的/backup/backup.tar。
 ```
 
 
