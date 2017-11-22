@@ -214,5 +214,9 @@ docker run -v <system-path>:<container-path>:ro <respository:tag> <command>
 
 挂载一个主机文件作为数据卷
 
-    `docker run --rm -it -v ~/.bash-history:/.bash-history ubuntu /bin/bash`
+```
+docker run --rm -it -v ~/.bash-history:/.bash-history ubuntu /bin/bash
+```
+
+
 
