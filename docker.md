@@ -243,5 +243,13 @@ simples:
 
 利用数据卷容器实现迁移数据
 
-    `docker run --volumes-from dbdata -v <system-path>:/backup <respository:tag> tar cvf /backup/backup.tar /dbdata`
+```
+docker run --volumes-from dbdata -v <system-path>:/backup <respository:tag> tar cvf /backup/backup.tar /dbdata
+
+注：使用 --volumes-from 标记来创建一个加载 dbdata 容器卷的容器，并从本地主机挂载当前到容器的
+/backup 目录。容器启动后，使用了 tar 命令来将 dbdata 卷备份为本地的 /backup/backup.tar.
+
+```
+
+
 
