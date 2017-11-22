@@ -198,5 +198,7 @@ cat <file>.tar | docker import - <repository:tag>
 * 对数据卷的修改不会影响容器
 * 数据卷会一直存在，直到没有容器使用
 
+在容器内创建一个数据卷
 
+    docker run -v /&lt;data-volumes-name&gt; &lt;respository:tag&gt; &lt;command&gt;
 
