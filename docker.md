@@ -207,7 +207,9 @@ docker run -v /<data-volumes-name> <respository:tag> <command>
 挂载一个主机目录作为数据卷
 
 ```
-docker run -v <system-path>:<container-path> <respository:tag> <command>
+docker run -v <system-path>:<container-path>:ro <respository:tag> <command>
+
+注：ro为可选项，默认挂载数据卷权限为可读写，加上ro后无法对数据卷的数据进行修改
 ```
 
 
