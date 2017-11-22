@@ -241,7 +241,9 @@ simples:
 注：可以多次使用--volumes-from参数来从多个容器挂载多个数据卷，也可以从已经挂载了数据的容器来挂载数据卷。
 ```
 
-利用数据卷容器实现迁移数据
+##### 利用数据卷容器实现迁移数据
+
+ 备份
 
 ```
 docker run --volumes-from dbdata -v <system-path>:/backup <respository:tag> tar cvf /backup/backup.tar /dbdata
