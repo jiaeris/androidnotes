@@ -243,7 +243,7 @@ simples:
 
 ##### 利用数据卷容器实现迁移数据
 
-备份
+备份：创建备份容器
 
 ```
 docker run --volumes-from dbdata -v <system-path>:/backup <respository:tag> tar cvf /backup/backup.tar /dbdata
