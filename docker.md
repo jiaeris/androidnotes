@@ -218,5 +218,11 @@ docker run -v <system-path>:<container-path>:ro <respository:tag> <command>
 docker run --rm -it -v ~/.bash-history:/.bash-history ubuntu /bin/bash
 ```
 
+数据卷容器
 
+用于用户在容器间共享一些持续更新的数据，这个容器的作用就是挂载公共数据卷
+
+首先创建一个容器dbdata，并创建一个数据卷挂载到/dbdata
+
+    `docker run -it -v /dbdata --name dbdata <respository:tag>`
 
