@@ -228,5 +228,7 @@ docker run --rm -it -v ~/.bash-history:/.bash-history ubuntu /bin/bash
 docker run -it -v /dbdata --name dbdata <respository:tag>
 ```
 
+然后使用 --volumes-from &lt;container-name&gt; 来挂载dbdata容器中的数据卷
 
+    `docker run -it --volumes-from dbdata --name <new-contanier-name> <respository:tag>`
 
