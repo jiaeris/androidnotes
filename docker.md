@@ -224,5 +224,9 @@ docker run --rm -it -v ~/.bash-history:/.bash-history ubuntu /bin/bash
 
 首先创建一个容器dbdata，并创建一个数据卷挂载到/dbdata
 
-    `docker run -it -v /dbdata --name dbdata <respository:tag>`
+```
+docker run -it -v /dbdata --name dbdata <respository:tag>
+```
+
+
 
