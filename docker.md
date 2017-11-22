@@ -230,5 +230,14 @@ docker run -it -v /dbdata --name dbdata <respository:tag>
 
 然后使用 --volumes-from &lt;container-name&gt; 来挂载dbdata容器中的数据卷
 
-    `docker run -it --volumes-from dbdata --name <new-contanier-name> <respository:tag>`
+```
+docker run -it --volumes-from dbdata --name <new-contanier-name> <respository:tag>
+
+simples:
+    docker run -it --volumes-from dbdata --name db1 ubuntu
+    docker run -it --volumes-from dbdata --name db2 ubuntu
+    将容器dbdata的数据卷挂载到db1和db2中
+```
+
+
 
