@@ -256,9 +256,15 @@ docker run --volumes-from dbdata -v <system-path>:/backup <respository:tag> tar 
 
 如果要恢复数据到一个容器，首先创建一个带有数据卷的容器 dbdata2。
 
-    `docker run -v /dbdata --name dbdata2 ubuntu /bin/bash`
+```
+docker run -v /dbdata --name dbdata2 ubuntu /bin/bash
+```
 
 然后创建另一个容器，挂载 dbdata2 的容器，并使用 untar 解压备份文件到挂载的容器卷中。
 
-    `docker run --volumes-from dbdata2 -v <system-path>:/backup <respository:tag> tar xvf /backup/backup.tar`
+```
+docker run --volumes-from dbdata2 -v <system-path>:/backup <respository:tag> tar xvf /backup/backup.tar
+```
+
+
 
