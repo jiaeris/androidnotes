@@ -237,8 +237,8 @@ simples:
     docker run -it --volumes-from dbdata --name db1 ubuntu
     docker run -it --volumes-from dbdata --name db2 ubuntu
     将容器dbdata的数据卷挂载到db1和db2中
-    
-注：可以多次使用--volumes-from参数来从多个容器挂载多个数据卷，也可以从已经挂载了数据的容器来挂载数据据昂。
+
+注：可以多次使用--volumes-from参数来从多个容器挂载多个数据卷，也可以从已经挂载了数据的容器来挂载数据卷。
 ```
 
 
