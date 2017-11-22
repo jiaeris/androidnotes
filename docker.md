@@ -243,7 +243,7 @@ simples:
 
 ##### 利用数据卷容器实现迁移数据
 
- 备份
+备份
 
 ```
 docker run --volumes-from dbdata -v <system-path>:/backup <respository:tag> tar cvf /backup/backup.tar /dbdata
@@ -252,5 +252,13 @@ docker run --volumes-from dbdata -v <system-path>:/backup <respository:tag> tar 
 /backup目录。容器启动后，使用了tar命令来将dbdata卷备份为本地的/backup/backup.tar。
 ```
 
+恢复
 
+如果要恢复数据到一个容器，首先创建一个带有数据卷的容器 dbdata2。
+
+docker run -v /dbdata --name dbdata2 ubuntu /bin/bash
+
+然后创建另一个容器，挂载 dbdata2 的容器，并使用 untar 解压备份文件到挂载的容器卷中。
+
+ docker run --volumes-from dbdata2 -v &lt;system-path&gt;:/backup &lt;respository:tag&gt; tar xvf /backup/backup.tar
 
