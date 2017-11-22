@@ -206,5 +206,9 @@ docker run -v /<data-volumes-name> <respository:tag> <command>
 
 挂载一个主机目录作为数据卷
 
-    `docker run -v <system-path>:<container-path> <respository:tag> <command>`
+```
+docker run -v <system-path>:<container-path> <respository:tag> <command>
+```
+
+
 
