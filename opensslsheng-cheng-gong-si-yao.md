@@ -12,5 +12,5 @@ apt-get install openssl
 
 开始生成1024位私钥
 
-`     genrsa -out rsa_private_key.pem 1024`
+    `genrsa -out rsa_private_key.pem 1024`
 
