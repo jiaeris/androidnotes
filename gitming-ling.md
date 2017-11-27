@@ -32,6 +32,14 @@
 
 `git push -f -u origin master`
 
+创建分支并切换
+
+`git checkout -b bname 同 git branch bname 然后 git checkout bname`
+
+合并分支
+
+`git merge bname`
+
 常见问题：
 
 一：把某些目录或文件加入忽略规则，  
