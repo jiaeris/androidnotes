@@ -26,11 +26,9 @@ sudo apt-get install openssh-server
 禁用： systemctl stop firewalld
 ```
 
-
-
 3.2systemctl是CentOS7的服务管理工具中主要的工具，它融合之前service和chkconfig的功能于一体。
 
-启动一个服务：systemctl start firewalld.service
+    启动一个服务：systemctl start firewalld.service
 
 关闭一个服务：systemctl stop firewalld.service
 
