@@ -19,13 +19,12 @@ sudo apt-get install openssh-server
 
 3.1firewalld的基本使用
 
-    启动： systemctl start firewalld
-
-查看状态： systemctl status firewalld 
-
+```
+启动： systemctl start firewalld
+查看状态： systemctl status firewalld
 停止： systemctl disable firewalld
-
 禁用： systemctl stop firewalld
+```
 
 
 
@@ -49,8 +48,6 @@ sudo apt-get install openssh-server
 
 查看启动失败的服务列表：systemctl --failed
 
-
-
 3.2配置firewalld-cmd
 
 查看版本： firewall-cmd --version
@@ -72,8 +69,6 @@ sudo apt-get install openssh-server
 取消拒绝状态： firewall-cmd --panic-off
 
 查看是否拒绝： firewall-cmd --query-panic
-
-
 
 3.4开启一个端口呢
 
