@@ -11,7 +11,9 @@ Retype new UNIX password:再次输入root用户密码
 
 2.安装ssh
 
-    `sudo apt-get install openssh-server`
+```
+sudo apt-get install openssh-server
+```
 
 
 
