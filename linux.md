@@ -40,11 +40,9 @@ sudo apt-get install openssh-server
 查看启动失败的服务列表：systemctl --failed
 ```
 
-
-
 3.2配置firewalld-cmd
 
-查看版本： firewall-cmd --version
+    查看版本： firewall-cmd --version
 
 查看帮助： firewall-cmd --help
 
