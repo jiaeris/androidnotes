@@ -55,7 +55,7 @@ sudo apt-get install openssh-server
 查看是否拒绝： firewall-cmd --query-panic
 ```
 
-3.4开启一个端口呢
+3.4开启一个端口
 
 ```
 添加
