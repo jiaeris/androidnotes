@@ -14,6 +14,8 @@
 
 * [openssl生成公私钥](/openssl.md)
 
+* [linux](/linux.md "linux相关操作")
+
 * To be continued...
 
 
