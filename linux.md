@@ -1,4 +1,4 @@
-### Linux常见问题以及常用命令记录
+### Linux相关操作
 
 1.输入su命令获取root权限时， 出现了authentication failure 的问题，即身份验证失败
 
