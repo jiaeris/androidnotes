@@ -74,5 +74,19 @@ firewall-cmd --zone= public --remove-port=80/tcp --permanent
 
 3.5 ufw防火墙
 
-    安装
+```
+安装
+apt-get install ufw 
+开启/关闭
+sudo ufw enable/disable
+系统启动自动开启
+sudo ufw default deny
+添加可访问端口
+sudo ufw allow <port>/tcp 
+删除访问端口
+ufw delete allow <port>/tcp
+
+```
+
+
 
