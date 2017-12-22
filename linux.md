@@ -83,8 +83,8 @@ ufw enable/disable
 ufw status
 系统启动自动开启
 ufw default deny
-添加可访问端口
-ufw allow <port>/tcp 
+添加或禁止可访问端口
+ufw allow|deny <port>/tcp 
 删除访问端口
 ufw delete allow <port>/tcp
 ```
