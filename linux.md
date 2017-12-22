@@ -13,6 +13,12 @@ Retype new UNIX password:再次输入root用户密码
 
 ```
 sudo apt-get install openssh-server
+
+端口重新配置
+vi /etc/ssh/sshd_config 内port 改为需要端口
+systemctl restart sshd.service 重启
+
+
 ```
 
 3.防火墙相关
