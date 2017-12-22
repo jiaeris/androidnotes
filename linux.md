@@ -17,8 +17,6 @@ sudo apt-get install openssh-server
 端口重新配置
 vi /etc/ssh/sshd_config 内port 改为需要端口
 systemctl restart sshd.service 重启
-
-
 ```
 
 3.防火墙相关
@@ -74,5 +72,7 @@ firewall-cmd --zone= public --query-port=80/tcp
 firewall-cmd --zone= public --remove-port=80/tcp --permanent
 ```
 
+3.5 ufw防火墙
 
+    安装
 
