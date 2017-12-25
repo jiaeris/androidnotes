@@ -39,6 +39,10 @@ systemctl restart sshd.service 重启
 把用户退出组 gpasswd -d <username> <groupname>
 修改组名 groupmod -n <oldname> <newname>
 删除用户组 groupdel <groupname>
+
+passwd中字段意义
+用户名：密码：用户ID：组ID：描述：主目录：默认shell
+第二个字段就是密码，一般加密后放在/etc/shadow里
 ```
 
 f.防火墙相关
