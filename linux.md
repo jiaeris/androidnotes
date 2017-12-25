@@ -21,7 +21,9 @@ systemctl restart sshd.service 重启
 
 3.账户管理
 
-    查看所有账户
+```
+查看所有账户 $cat /etc/passwd
+```
 
 f.防火墙相关
 
