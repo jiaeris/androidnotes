@@ -19,9 +19,13 @@ vi /etc/ssh/sshd_config 内port 改为需要端口
 systemctl restart sshd.service 重启
 ```
 
-3.防火墙相关
+3.账户管理
 
-3.1firewalld的基本使用
+    查看所有账户
+
+f.防火墙相关
+
+f.1firewalld的基本使用
 
 ```
 启动： systemctl start firewalld
@@ -30,7 +34,7 @@ systemctl restart sshd.service 重启
 禁用： systemctl stop firewalld
 ```
 
-3.2systemctl是CentOS7的服务管理工具中主要的工具，它融合之前service和chkconfig的功能于一体。
+f.2systemctl是CentOS7的服务管理工具中主要的工具，它融合之前service和chkconfig的功能于一体。
 
 ```
 启动一个服务：systemctl start firewalld.service
@@ -44,7 +48,7 @@ systemctl restart sshd.service 重启
 查看启动失败的服务列表：systemctl --failed
 ```
 
-3.2配置firewalld-cmd
+f.2配置firewalld-cmd
 
 ```
 查看版本： firewall-cmd --version
@@ -59,7 +63,7 @@ systemctl restart sshd.service 重启
 查看是否拒绝： firewall-cmd --query-panic
 ```
 
-3.4开启一个端口
+f.4开启一个端口
 
 ```
 添加
@@ -72,7 +76,7 @@ firewall-cmd --zone= public --query-port=80/tcp
 firewall-cmd --zone= public --remove-port=80/tcp --permanent
 ```
 
-3.5 ufw防火墙
+f.5 ufw防火墙
 
 ```
 安装
