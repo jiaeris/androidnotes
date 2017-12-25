@@ -34,6 +34,11 @@ systemctl restart sshd.service 重启
 删除用户并删除工作目录 userdel -r <username>
 查看用户信息 id <username>
 查看用户详细信息 finger <username>
+创建用户组 groupadd -g <gid> <groupname>
+为用户组添加新成员 gpasswd -a <username> <groupname>
+把用户退出组 gpasswd -d <username> <groupname>
+修改组名 groupmod -n <oldname> <newname>
+删除用户组 groupdel <groupname>
 ```
 
 f.防火墙相关
