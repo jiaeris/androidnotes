@@ -22,7 +22,18 @@ systemctl restart sshd.service 重启
 3.账户管理
 
 ```
-查看所有账户 $cat /etc/passwd
+查看所有用户 cat etc/passwd
+查看所有用户组 cat etc/group
+创建用户 useradd <username>
+创建并指定用户有效期 useradd -e 12/30/2018 <username>
+创建并指定用户用户ID useradd -u <username>
+修改用户名 usermod -l <oldname> <newname>
+将用户加入到其他组 usermod -g <oldgroup> <newgroup>
+修改用户目录 usermod -d <path> <username>
+删除用户 userdel <username>
+删除用户并删除工作目录 userdel -r <username>
+查看用户信息 id <username>
+查看用户详细信息 finger <username>
 ```
 
 f.防火墙相关
