@@ -26,8 +26,12 @@ systemctl restart sshd.service 重启
 查看所有用户组 cat etc/group
 创建用户 useradd <username>
 创建并指定用户有效期 useradd -e 12/30/2018 <username>
-创建并指定用户用户ID useradd -u <username>
+创建并指定用户用户ID useradd -u <uid>
+创建用户并加入用户组 useradd -g <groupname> <username>
 修改用户名 usermod -l <oldname> <newname>
+给已有用户增加工作组 usermod -G <groupname> <username>
+给已有用户增加工作组 usermod -a <groupname> <newgroup>
+
 将用户加入到其他组 usermod -g <oldgroup> <newgroup>
 修改用户目录 usermod -d <path> <username>
 删除用户 userdel <username>
@@ -45,6 +49,14 @@ etc/passwd中字段意义
 第二个字段就是密码，一般加密后放在/etc/shadow里
 etc/group中
 组名:口令:组标识号:组内用户列表(如果字段为空表示用户组为GID的用户名)
+
+为用户添加 sudo权限
+切换到超级用户：$ su
+打开/etc/sudoers文件：$vi /etc/sudoers
+修改文件内容：
+找到“root  ALL=(ALL)   ALL”一行，在下面插入新的一行，内容是“<username> ALL=(ALL) ALL”，然后在vi键入命令“wq!”保存并退出。
+注：这个文件是只读的，不加“!”保存会失败。
+
 ```
 
 4.文件权限
