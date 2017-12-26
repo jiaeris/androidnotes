@@ -31,7 +31,7 @@ systemctl restart sshd.service 重启
 修改用户名 usermod -l <oldname> <newname>
 给已有用户增加工作组 usermod -G <groupname> <username>
 给已有用户增加工作组 usermod -a <groupname> <newgroup>
-
+修改用户密码 passwd <username>
 将用户加入到其他组 usermod -g <oldgroup> <newgroup>
 修改用户目录 usermod -d <path> <username>
 删除用户 userdel <username>
@@ -56,7 +56,6 @@ etc/group中
 修改文件内容：
 找到“root  ALL=(ALL)   ALL”一行，在下面插入新的一行，内容是“<username> ALL=(ALL) ALL”，然后在vi键入命令“wq!”保存并退出。
 注：这个文件是只读的，不加“!”保存会失败。
-
 ```
 
 4.文件权限
