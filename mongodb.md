@@ -14,9 +14,10 @@ Community Edition
 
 例如在C盘中创建：
 
-    mkdir C:\data\db
-
+```
+mkdir C:\data\db
 mkdir C:\data\log
+```
 
 2.创建一个配置文件
 
@@ -35,8 +36,6 @@ storage:
 3.安装MongoDB服务
 
 以下所有命令请在管理员权限下执行
-
-
 
 4.
 
