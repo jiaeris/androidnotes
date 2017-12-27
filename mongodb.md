@@ -103,5 +103,19 @@ sc.exe create MongoDB binPath= "\"C:\Program Files\MongoDB\Server\3.6\bin\mongod
 [SC] CreateService SUCCESS
 ```
 
+4.启动服务
 
+同方式二
+
+5.连接MongoDB
+
+同方式二
+
+6.关闭服务
+
+同方式二
+
+删除服务
+
+sc.exe delete MongoDB
 
