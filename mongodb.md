@@ -61,5 +61,15 @@ net start MongoDB
 
 6.关闭MongoDB
 
-    net stop MongoDB
+```
+net stop MongoDB
+```
+
+7.删除MongoDB服务
+
+```
+"C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --remove
+```
+
+
 
