@@ -4,9 +4,13 @@ Community Edition
 
 [安装见官网](https://docs.mongodb.com/manual/installation/)
 
-#### 启动方式
+### 启动
 
 ##### 方式一：直接启动
+
+1.创建MongoDB数据目录，在任意地方，例如 C:\data\db
+
+
 
 ##### 方式二：为MongoDB配置一个Windows服务
 
