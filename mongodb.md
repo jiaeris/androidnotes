@@ -67,7 +67,7 @@ net start MongoDB
 
 查看log文件，最后一行为：\[initandlistn\] waiting for connections on port 21017表示启动成功
 
-5.同方式一:3
+5.连接使用同方式一:3
 
 6.关闭MongoDB
 
