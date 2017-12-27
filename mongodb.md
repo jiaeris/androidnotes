@@ -49,9 +49,17 @@ storage:
 
 4.启动MongoDB服务
 
-    net start MongoDB
+```
+net start MongoDB
+```
 
+查看log文件，最后一行为：\[initandlistn\] waiting for connections on port 21017表示启动成功
 
+5.连接MongoDB
 
+使用mongo.exe，或者MongoCompass，或者使用驱动
 
+6.关闭MongoDB
+
+    net stop MongoDB
 
