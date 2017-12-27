@@ -83,5 +83,19 @@ net stop MongoDB
 
 ##### 方式三：手动添加MongoDB服务
 
+1.创建目录
+
+同方式二
+
+2.创建配置文件
+
+同方式二
+
+3.创建MongoDB服务
+
+```
+sc.exe create MongoDB binPath= "\"C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe\" --service --config=\"C:\Program Files\MongoDB\Server\3.6\mongod.cfg\"" DisplayName= "MongoDB" start= "auto"
+```
+
 
 
