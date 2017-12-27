@@ -24,11 +24,13 @@ mkdir C:\data\log
 
 ```
 systemLog:
-    destination:file
-    path:c:\data\log\mongod.log
+    destination: file
+    path: c:\data\log\mongod.log
 storage:
-    dbPath:c:\data\db
+    dbPath: c:\data\db
 ```
+
+
 
 3.
 
