@@ -20,6 +20,8 @@ mkdir C:\data\log
 
 2.创建一个配置文件
 
+配置文件示例如下
+
 ```
 systemLog:
     destination:file
