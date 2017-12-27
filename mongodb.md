@@ -10,7 +10,11 @@ Community Edition
 
 1.创建MongoDB数据目录，在任意地方，例如 C:\data\db
 
+2.以配置数据路径启动MongoDB
 
+```
+"C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --dbpath "c:\data\db"
+```
 
 ##### 方式二：为MongoDB配置一个Windows服务
 
