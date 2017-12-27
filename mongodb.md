@@ -4,7 +4,7 @@ Community Edition
 
 [安装见官网](https://docs.mongodb.com/manual/installation/)
 
-### 启动
+### 启动MongoDB服务
 
 ##### 方式一：直接启动
 
@@ -117,5 +117,9 @@ sc.exe create MongoDB binPath= "\"C:\Program Files\MongoDB\Server\3.6\bin\mongod
 
 7.删除服务
 
-    sc.exe delete MongoDB
+```
+sc.exe delete MongoDB
+```
+
+
 
