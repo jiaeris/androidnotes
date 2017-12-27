@@ -115,7 +115,7 @@ sc.exe create MongoDB binPath= "\"C:\Program Files\MongoDB\Server\3.6\bin\mongod
 
 同方式二
 
-删除服务
+7.删除服务
 
-sc.exe delete MongoDB
+    sc.exe delete MongoDB
 
