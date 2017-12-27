@@ -16,6 +16,10 @@ Community Edition
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --dbpath "c:\data\db"
 ```
 
+3.连接MongoDB
+
+使用mongo.exe，或者MongoCompass，或者使用驱动
+
 ##### 方式二：为MongoDB配置一个Windows服务
 
 1.创建目录
