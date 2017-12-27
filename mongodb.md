@@ -30,7 +30,7 @@ storage:
     dbPath: c:\data\db
 ```
 
-
+创建配置文件必须包含systemLog.path即系统日志目录，根据需要包含其他配置信息。
 
 3.
 
