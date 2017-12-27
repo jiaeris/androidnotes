@@ -14,7 +14,7 @@ Community Edition
 
 例如在C盘中创建：
 
-mkdir C:\data\db
+    mkdir C:\data\db
 
 mkdir C:\data\log
 
@@ -32,7 +32,11 @@ storage:
 
 创建配置文件必须包含systemLog.path即系统日志目录，根据需要包含其他配置信息。
 
-3.
+3.安装MongoDB服务
+
+以下所有命令请在管理员权限下执行
+
+
 
 4.
 
