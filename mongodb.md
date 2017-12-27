@@ -8,8 +8,6 @@ Community Edition
 
 ##### 方式一：直接启动
 
-
-
 ##### 方式二：为MongoDB配置一个Windows服务
 
 1.创建目录
@@ -49,11 +47,9 @@ storage:
 
 路径视自己的配置路径而定
 
-4.
+4.启动MongoDB服务
 
-
-
-
+    net start MongoDB
 
 
 
