@@ -6,7 +6,11 @@ Community Edition
 
 #### 启动方式
 
-##### 方式一：为MongoDB配置一个Windows服务
+##### 方式一：直接启动
+
+
+
+##### 方式二：为MongoDB配置一个Windows服务
 
 1.创建目录
 
@@ -37,5 +41,21 @@ storage:
 
 以下所有命令请在管理员权限下执行
 
+通过mongod.exe安装MongoDB服务，使用 --install 和 --config 选项关联之前的配置文件
+
+```
+"C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --config "C:\Program Files\MongoDB\Server\3.6\mongod.cfg" --install
+```
+
+路径视自己的配置路径而定
+
 4.
+
+
+
+
+
+
+
+
 
