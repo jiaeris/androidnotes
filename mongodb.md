@@ -81,7 +81,7 @@ net stop MongoDB
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --remove
 ```
 
-##### 方式三：手动添加MongoDB服务
+##### 方式三：手动添加MongoDB服务（此方式同添加其他WINDOWS服务一样）
 
 1.创建目录
 
