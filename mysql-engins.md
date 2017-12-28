@@ -41,8 +41,7 @@ InnoDB是一个健壮的事务型存储引擎，这种存储引擎已经被很�
 
 一般来说，如果需要事务支持，并且有较高的并发读取频率，InnoDB是不错的选择。
 
-  
-外键约束说明： 
+外键约束说明：
 
 MySQL支持外键的存储引擎只有InnoDB，在创建外键的时候，父表必须有对应的索引，子表在创建外键的时候也会自动创建对应的索引。 在创建索引的时候，可以指定在删除、更新父表时，对子表进行的相应操作，包括restrict、cascade、set null和no action。其中restrict和no action相同，是指限制在子表有关联的情况下，父表不能更新；casecade表示父表在更新或删除时，更新或者删除子表对应的记录；set null 则表示父表在更新或者删除的时候，子表对应的字段被set null。当某个表被其它表创建了外键参照，那么该表对应的索引或主键被禁止删除。可以使用set foreign\_key\_checks=0;临时关闭外键约束，set foreign\_key\_checks=1;打开约束。
 
@@ -64,41 +63,31 @@ Memory同时支持散列索引和B树索引。B树索引的优于散列索引的
 
 复制代码代码如下:
 
-    create table users
-
-\(
-
-    id smallint unsigned not null auto\_increment,
-
-    username varchar\(15\) not null,
-
-    pwd varchar\(15\) not null,
-
-    index using hash \(username\),
-
-    primary key \(id\)
-
-\)engine=memory;
+```
+create table users
+(
+    id smallint unsigned not null auto_increment,
+    username varchar(15) not null,
+    pwd varchar(15) not null,
+    index using hash (username),
+    primary key (id)
+)engine=memory;
+```
 
 上述代码创建了一个表，在username字段上使用了HASH散列索引。下面的代码就创建一个表，使用BTREE索引。
 
 复制代码代码如下:
 
+```
 create table users
-
-\(
-
-    id smallint unsigned not null auto\_increment,
-
-    username varchar\(15\) not null,
-
-    pwd varchar\(15\) not null,
-
-    index using btree \(username\),
-
-    primary key \(id\)
-
-\)engine=memory;
+(
+    id smallint unsigned not null auto_increment,
+    username varchar(15) not null,
+    pwd varchar(15) not null,
+    index using btree (username),
+    primary key (id)
+)engine=memory;
+```
 
 ##### 4.**MERGE**
 
