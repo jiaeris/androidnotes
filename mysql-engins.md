@@ -25,38 +25,82 @@
 　　动态表包含变长字段，记录不是固定长度的，这样存储的优点是占用空间较少，但是频繁到更新删除记录会产生碎片，需要定期执行OPTIMIZE TABLE语句或myisamchk -r命令来改善性能，并且出现故障的时候恢复相对比较困难。  
 　　压缩表由myisamchk工具创建，占据非常小的空间，因为每条记录都是被单独压缩的，所以只有非常小的访问开支。
 
-#####  2.**InnoDB **
+##### 2.**InnoDB **
 
-InnoDB存储引擎提供了具有提交、回滚和崩溃恢复能力的事务安全。但是对比MyISAM的存储引擎，InnoDB写的处理效率差一些并且会占用更多的磁盘空间以保留数据和索引。  
-1\)自动增长列：InnoDB表的自动增长列可以手工插入，但是插入的如果是空或0，则实际插入到则是自动增长后到值。可以通过"ALTER TABLE...AUTO\_INCREMENT=n;"语句强制设置自动增长值的起始值，默认为1，但是该强制到默认值是保存在内存中，数据库重启后该值将会丢失。可以使用LAST\_INSERT\_ID\(\)查询当前线程最后插入记录使用的值。如果一次插入多条记录，那么返回的是第一条记录使用的自动增长值。  
-对于InnoDB表，自动增长列必须是索引。如果是组合索引，也必须是组合索引的第一列，但是对于MyISAM表，自动增长列可以是组合索引的其他列，这样插入记录后，自动增长列是按照组合索引到前面几列排序后递增的。  
-2\)外键约束：  
-MySQL支持外键的存储引擎只有InnoDB，在创建外键的时候，父表必须有对应的索引，子表在创建外键的时候也会自动创建对应的索引。  
-      在创建索引的时候，可以指定在删除、更新父表时，对子表进行的相应操作，包括restrict、cascade、set null和no action。其中restrict和no action相同，是指限制在子表有关联的情况下，父表不能更新；casecade表示父表在更新或删除时，更新或者删除子表对应的记录；set null 则表示父表在更新或者删除的时候，子表对应的字段被set null。  
-　　当某个表被其它表创建了外键参照，那么该表对应的索引或主键被禁止删除。  
-　　可以使用set foreign\_key\_checks=0;临时关闭外键约束，set foreign\_key\_checks=1;打开约束。
+InnoDB是一个健壮的事务型存储引擎，这种存储引擎已经被很多互联网公司使用，为用户操作非常大的数据存储提供了一个强大的解决方案。我的电脑上安装的MySQL 5.6.13版，InnoDB就是作为默认的存储引擎。InnoDB还引入了行级锁定和外键约束，在以下场合下，使用InnoDB是最理想的选择：
 
-#####  3.**MEMORY**
+1.更新密集的表。InnoDB存储引擎特别适合处理多重并发的更新请求。
 
-memory使用存在内存中的内容来创建表。每个MEMORY表实际对应一个磁盘文件，格式是.frm。MEMORY类型的表访问非常快，因为它到数据是放在内存中的，并且默认使用HASH索引，但是一旦服务器关闭，表中的数据就会丢失，但表还会继续存在。  
-      默认情况下，memory数据表使用散列索引，利用这种索引进行“相等比较”非常快，但是对“范围比较”的速度就慢多了。因此，散列索引值适合使用在"="和"&lt;=&gt;"的操作符中，不适合使用在"&lt;"或"&gt;"操作符中，也同样不适合用在order by字句里。如果确实要使用"&lt;"或"&gt;"或betwen操作符，可以使用btree索引来加快速度。  
-　　存储在MEMORY数据表里的数据行使用的是长度不变的格式，因此加快处理速度，这意味着不能使用BLOB和TEXT这样的长度可变的数据类型。VARCHAR是一种长度可变的类型，但因为它在MySQL内部当作长度固定不变的CHAR类型，所以可以使用。
+2.事务。InnoDB存储引擎是支持事务的标准MySQL存储引擎。
 
-| `create table tab_memory engine=memoryselectid,name,age,addrfromman orderbyid;` |
-| :--- |
+3.自动灾难恢复。与其它存储引擎不同，InnoDB表能够自动从灾难中恢复。
 
+4.外键约束。MySQL支持外键的存储引擎只有InnoDB。
 
-使用USING HASH/BTREE来指定特定到索引。
+5.支持自动增加列AUTO\_INCREMENT属性。
 
-| `create index mem_hashusinghashontab_memory(city_id);` |
-| :--- |
+一般来说，如果需要事务支持，并且有较高的并发读取频率，InnoDB是不错的选择。
 
+  
+外键约束说明： 
 
-在启动MySQL服务的时候使用--init-file选项，把insert into...select或load data infile 这样的语句放入到这个文件中，就可以在服务启动时从持久稳固的数据源中装载表。  
-　　服务器需要足够的内存来维持所在的在同一时间使用的MEMORY表，当不再使用MEMORY表时，要释放MEMORY表所占用的内存，应该执行DELETE FROM或truncate table或者删除整个表。  
-　　每个MEMORY表中放置到数据量的大小，受到max\_heap\_table\_size系统变量的约束，这个系统变量的初始值是16M，同时在创建MEMORY表时可以使用MAX\_ROWS子句来指定表中的最大行数。
+MySQL支持外键的存储引擎只有InnoDB，在创建外键的时候，父表必须有对应的索引，子表在创建外键的时候也会自动创建对应的索引。 在创建索引的时候，可以指定在删除、更新父表时，对子表进行的相应操作，包括restrict、cascade、set null和no action。其中restrict和no action相同，是指限制在子表有关联的情况下，父表不能更新；casecade表示父表在更新或删除时，更新或者删除子表对应的记录；set null 则表示父表在更新或者删除的时候，子表对应的字段被set null。当某个表被其它表创建了外键参照，那么该表对应的索引或主键被禁止删除。可以使用set foreign\_key\_checks=0;临时关闭外键约束，set foreign\_key\_checks=1;打开约束。
 
-#####  4.**MERGE**
+##### 3.**MEMORY**
+
+使用MySQL Memory存储引擎的出发点是速度。为得到最快的响应时间，采用的逻辑存储介质是系统内存。虽然在内存中存储表数据确实会提供很高的性能，但当mysqld守护进程崩溃时，所有的Memory数据都会丢失。获得速度的同时也带来了一些缺陷。它要求存储在Memory数据表里的数据使用的是长度不变的格式，这意味着不能使用BLOB和TEXT这样的长度可变的数据类型，VARCHAR是一种长度可变的类型，但因为它在MySQL内部当做长度固定不变的CHAR类型，所以可以使用。
+
+一般在以下几种情况下使用Memory存储引擎：
+
+1.目标数据较小，而且被非常频繁地访问。在内存中存放数据，所以会造成内存的使用，可以通过参数max\_heap\_table\_size控制Memory表的大小，设置此参数，就可以限制Memory表的最大大小。
+
+2.如果数据是临时的，而且要求必须立即可用，那么就可以存放在内存表中。
+
+3.存储在Memory表中的数据如果突然丢失，不会对应用服务产生实质的负面影响。
+
+Memory同时支持散列索引和B树索引。B树索引的优于散列索引的是，可以使用部分查询和通配查询，也可以使用&lt;、&gt;和&gt;=等操作符方便数据挖掘。散列索引进行“相等比较”非常快，但是对“范围比较”的速度就慢多了，因此散列索引值适合使用在=和&lt;&gt;的操作符中，不适合在&lt;或&gt;操作符中，也同样不适合用在order by子句中。
+
+可以在表创建时利用USING子句指定要使用的版本。例如：
+
+复制代码代码如下:
+
+    create table users
+
+\(
+
+    id smallint unsigned not null auto\_increment,
+
+    username varchar\(15\) not null,
+
+    pwd varchar\(15\) not null,
+
+    index using hash \(username\),
+
+    primary key \(id\)
+
+\)engine=memory;
+
+上述代码创建了一个表，在username字段上使用了HASH散列索引。下面的代码就创建一个表，使用BTREE索引。
+
+复制代码代码如下:
+
+create table users
+
+\(
+
+    id smallint unsigned not null auto\_increment,
+
+    username varchar\(15\) not null,
+
+    pwd varchar\(15\) not null,
+
+    index using btree \(username\),
+
+    primary key \(id\)
+
+\)engine=memory;
+
+##### 4.**MERGE**
 
 merge存储引擎是一组MyISAM表的组合，这些MyISAM表结构必须完全相同，MERGE表中并没有数据，对MERGE类型的表可以进行查询、更新、删除的操作，这些操作实际上是对内部的MyISAM表进行操作。对于对MERGE表进行的插入操作，是根据INSERT\_METHOD子句定义的插入的表，可以有3个不同的值，first和last值使得插入操作被相应的作用在第一个或最后一个表上，不定义这个子句或者为NO，表示不能对这个MERGE表进行插入操作。可以对MERGE表进行drop操作，这个操作只是删除MERGE表的定义，对内部的表没有任何影响。MERGE在磁盘上保留2个以MERGE表名开头文件：.frm文件存储表的定义；.MRG文件包含组合表的信息，包括MERGE表由哪些表组成，插入数据时的依据。可以通过修改.MRG文件来修改MERGE表，但是修改后要通过flush table刷新。
 
