@@ -8,4 +8,5 @@
 * [linux](linux.md)
 * [mongodb](mongodb.md)
 * [mongodb-crud](mongodb-crud.md)
+* [redis](redis.md)
 
