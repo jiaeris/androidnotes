@@ -4,6 +4,8 @@ Community Edition
 
 [安装见官网](https://docs.mongodb.com/manual/installation/)
 
+[CRUD](/mongodb-crud.md)
+
 ### 启动MongoDB服务
 
 ##### 方式一：直接启动
