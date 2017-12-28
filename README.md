@@ -12,6 +12,8 @@
 
 * [docker](/docker.md)
 
+* [redis](/redis.md)
+
 * [openssl生成公私钥](/openssl.md)
 
 * [linux](/linux.md "linux相关操作")
