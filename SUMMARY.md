@@ -9,4 +9,6 @@
 * [mongodb](mongodb.md)
 * [mongodb-crud](mongodb-crud.md)
 * [redis](redis.md)
+* [mysql](mysql.md)
+* [mysql-engins](mysql-engins.md)
 
