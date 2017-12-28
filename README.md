@@ -18,6 +18,8 @@
 
 * [linux](/linux.md "linux相关操作")
 
+* [mongodb相关](/mongodb.md)
+
 * To be continued...
 
 
