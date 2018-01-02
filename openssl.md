@@ -58,11 +58,11 @@ openssl rsa -in rsa_private_key.pem -outform der-out rsa_private.der
 
 查看私钥明细
 
-    openssl rsa -in rsa\_private\_key.pem -noout -text
+```
+openssl rsa -in rsa_private_key.pem -noout -text
+```
 
 使用-pubin参数查看公钥明细
-
-
 
 将私钥转为pkcs8格式
 
