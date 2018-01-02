@@ -45,8 +45,24 @@ openssl rsa -in rsa_aes_private_key.pem -passin pass:1203 -out rsa_private_key.p
 私钥转加密
 
 ```
-openssl rsa -in rsa_private.key -aes256 -passout pass:1203 -out rsa_aes_private.key
+openssl rsa -in rsa_private_key.pem -aes256 -passout pass:1203 -out rsa_aes_private_key.pem
 ```
+
+私钥PEM转DER
+
+```
+openssl rsa -in rsa_private_key.pem -outform der-out rsa_private.der
+```
+
+-inform和-outform 参数制定输入输出格式，由der转pem格式同理
+
+查看私钥明细
+
+    openssl rsa -in rsa\_private\_key.pem -noout -text
+
+使用-pubin参数查看公钥明细
+
+
 
 将私钥转为pkcs8格式
 
