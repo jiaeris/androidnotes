@@ -6,7 +6,7 @@
 apt-get install openssl
 ```
 
-开始生成1024\(2048\)位私钥
+生成RSA私钥【无加密】
 
 ```
 openssl genrsa -out rsa_private_key.pem 1024
