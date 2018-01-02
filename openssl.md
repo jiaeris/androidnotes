@@ -42,7 +42,11 @@ openssl rsa -in rsa_aes_private_key.pem -passin pass:1203 -pubout -out rsa_publi
 openssl rsa -in rsa_aes_private_key.pem -passin pass:1203 -out rsa_private_key.pem
 ```
 
+私钥转加密
 
+```
+openssl rsa -in rsa_private.key -aes256 -passout pass:1203 -out rsa_aes_private.key
+```
 
 将私钥转为pkcs8格式
 
