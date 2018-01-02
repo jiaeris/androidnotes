@@ -67,7 +67,7 @@ openssl rsa -in rsa_private_key.pem -noout -text
 将私钥转为pkcs8格式
 
 ```
-openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -out pkcs8_private_key.pem
+openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -out pkcs8_private_key.pem -nocrypt
 ```
 
 
