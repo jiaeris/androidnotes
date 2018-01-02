@@ -39,7 +39,7 @@ openssl rsa -in rsa_aes_private_key.pem -passin pass:1203 -pubout -out rsa_publi
 私钥转非加密
 
 ```
-openssl rsa -in rsa_aes_private.key -passin pass:111111 -out rsa_private.key
+openssl rsa -in rsa_aes_private.key -passin pass:1203 -out rsa_private_key.pem
 ```
 
 
