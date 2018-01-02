@@ -6,6 +6,8 @@
 apt-get install openssl
 ```
 
+默认情况下openssl输出格式为PKCS\#1-PEM
+
 生成RSA私钥【无加密】
 
 ```
