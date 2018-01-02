@@ -31,8 +31,18 @@ openssl genrsa -aes256 -passout pass:1203 -out rsa_aes_private_key.pem 2048
 生成RSA公钥-根据aes256加密的私钥
 
 ```
-openssl 
+openssl rsa -in rsa_aes_private_key.pem -passin pass:1203 -pubout -out rsa_public_key.pem
 ```
+
+转换命令
+
+私钥转非加密
+
+```
+openssl rsa -in rsa_aes_private.key -passin pass:111111 -out rsa_private.key
+```
+
+
 
 将私钥转为pkcs8格式
 
