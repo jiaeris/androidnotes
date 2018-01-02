@@ -14,7 +14,7 @@ apt-get install openssl
 openssl genrsa -out rsa_private_key.pem 1024
 ```
 
-生成RSA公钥-根据以上私钥
+生成RSA公钥
 
 ```
 openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem
@@ -30,7 +30,9 @@ openssl genrsa -aes256 -passout pass:1203 -out rsa_aes_private_key.pem 2048
 
 生成RSA公钥-根据aes256加密的私钥
 
-    openssl
+```
+openssl 
+```
 
 将私钥转为pkcs8格式
 
