@@ -22,7 +22,15 @@ openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem
 
 生成RSA私钥【使用aes256加密】
 
-    openssl 
+```
+openssl genrsa -aes256 -passout pass:1203 -out rsa_aes_private_key.pem 2048
+```
+
+其中passout 代替shell进行密码输入，否则会提示输入密码。
+
+生成RSA公钥-根据aes256加密的私钥
+
+    openssl
 
 将私钥转为pkcs8格式
 
