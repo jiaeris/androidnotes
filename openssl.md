@@ -70,5 +70,9 @@ openssl rsa -in rsa_private_key.pem -noout -text
 openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -out pkcs8_private_key.pem -nocrypt
 ```
 
+以上使用-nocrypt参数，输出无加密的pkcs8私钥
 
+但是pkcs8默认使用des3加密算法，如下使用：
+
+    openssl pkcs8 -topk8 -in rsa\_private
 
