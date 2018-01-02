@@ -74,5 +74,9 @@ openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -out pkcs8
 
 但是pkcs8默认使用des3加密算法，如下使用：
 
-    openssl pkcs8 -topk8 -in rsa\_private
+```
+openssl pkcs8 -topk8 -in rsa_private_key.pem -passout pass:1203 -out pkcs8_private_key.pem
+```
+
+
 
