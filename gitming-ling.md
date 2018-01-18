@@ -68,7 +68,8 @@ git stash 搁置本地
 git stash list 查看本地搁置列表 可以看到 stash@{0} stash@{1}搁置列表
 git pull 拉取远程工程
 git stash pop stash@{0} 合并搁置版本 和 远程拉取版本
-
+git status查看冲突文件 并修改
+修改后 git add .重新添加提交即可
 ```
 
 
