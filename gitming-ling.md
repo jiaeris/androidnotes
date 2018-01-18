@@ -63,7 +63,5 @@ git commit -m 'update .gitignore'
 
 冲突解决
 
-    
-
-
+git stash
 
