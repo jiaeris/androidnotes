@@ -63,5 +63,13 @@ git commit -m 'update .gitignore'
 
 冲突解决
 
-    git stash
+```
+git stash 搁置本地
+git stash list 查看本地搁置列表 可以看到 stash@{0} stash@{1}搁置列表
+git pull 拉取远程工程
+git stash pop stash@{0}
+
+```
+
+
 
