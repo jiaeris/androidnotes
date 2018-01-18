@@ -61,5 +61,9 @@ git add .
 git commit -m 'update .gitignore'
 ```
 
+冲突解决
+
+    
+
 
 
