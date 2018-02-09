@@ -138,6 +138,10 @@ docker run -p 10011:10086 --name webc -it -v /yunga:/yunga ubuntu /bin/bash
 -v 挂载数据卷（挂载普通数据卷，直接跟上数据卷路径。挂载主机目录作为数据据卷，主机目录:容器目录），若路径不存在会自动创建
 command 启动容器时第一时间执行的liunx命令
 ```
+创建启动容器多条命令：例子
+```
+docker run -p <system-port>:<container-port> -v <system-path>:<container-path> --name <container-name> -it ubuntu sh -c '<command1> && <command2>'
+```
 
 运行中容器
 
