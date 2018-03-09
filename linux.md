@@ -172,5 +172,8 @@ ufw allow|deny <port>/tcp
 ufw delete allow <port>/tcp
 ```
 
-
+f.5 端口映射
+```bash
+iptables -t nat -A PREROUTING -p tcp --dport (目标端口) -j REDIRECT --to-port （映射端口） 
+```
 
